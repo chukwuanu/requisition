@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entering of Sale and Issuance of Letters Patent</title>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    
+    <!-- 
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script> -->
+    <script defer src="/script.js"></script>
+   
+    </script>
+   
+  </head>
+  <body>
+    <section class="question">
+      <h1>Entering of Sale and Issuance of Letters Patent</h1>
+      <p>
+        Included in this package are the requisitions that may be required to
+        prepare for issuing letters patent.<b
+          >Section A is mandatory to issue a letters patent.
+        </b>
+      </p>
+      <main>
+        <h3>
+          Answer the following questions to determine which additional Sections
+          need to be completed.
+        </h3>
+        <ul>
+          <li>
+            Is the applicant currently under another form of tenure that
+            requires cancellation?
+            <div class="radio-group">
+              <input type="radio" name="tenure" id="tenure-yes" />
+              <label for="tenure-yes">Yes</label>
+              <input type="radio" name="tenure" id="tenure-no" />
+              <label for="tenure-no">No</label>
+            </div>
+          </li>
+          <li>
+            Is the sale for a crown shore reserve or road allowance?
+            <div class="radio-group">
+              <input type="radio" name="sale" id="sale-yes" />
+              <label for="sale-yes">Yes</label>
+              <input type="radio" name="sale" id="sale-no" />
+              <label for="sale-no">No</label>
+            </div>
+          </li>
+          <li id="municipality">
+
+            <!-- Munici-pality here -->
+          </li>
+        </ul>
+      </main>
+    </section>
+
+ 
+
+
+
+ 
+    
+ 
+    </section>
+    <section>
+      <h3>
+        Section A: Requisition for Sale and Issuance of Letters Patent
+        (required)
+      </h3>
+      <form id="form">
+       <div>
+        <div class="form-group">
+            <label for="requisition">
+              <div class="label-with-icon">
+
+                <div>
+                  
+                  Requisition
+                </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                   Select proper statutory from the prepopulated drop-down
+                  </div>
+                </div>
+              </div>
+
+            </label>
+            <select id="requisition">
+              <option value="Section 15 PLA(Regulated sale)">
+                Section 15 PLA(Regulated sale)
+              </option>
+              <option value="Section 16 PLA(sale)">Section 16 PLA (Sale)</option>
+              <option value="Section 16 PLA (Sale includes road allowance)">
+                Section 16 PLA (Sale includes road allowance)
+              </option>
+              <option
+                value="Section 16 PLA(Cancellation of Lease/License and Entering Sale, Issuance of Letters)"
+              >
+                Section 16 PLA(Cancellation of Lease/License and Entering Sale,
+                Issuance of Letters)
+              </option>
+              <option value="Section 17 PLA - Quit Claim">
+                Section 17 PLA - Quit Claim
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="legal-names">Legal Name(s):</label>
+            <textarea id="legal-names"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="operating-names">Operating Name(s):</label>
+            <input type="text" id="operating-names" />
+          </div>
+          <div class="form-group">
+            <label for="jurisdiction">Jurisdiction of Incorporation:</label>
+            <input type="text" id="jurisdiction" />
+          </div>
+          <div class="line"></div>
+          <div class="">        <div class="form-group form-flex">
+            <label for="tenancy">Tenancy:</label>
+            <select id="tenancy">
+              <option value="Joint Tenants">Joint Tenants</option>
+              <option value="Tenants in Common">Tenants in Common</option>
+            </select>
+          </div>
+          <div class="form-group form-flex">
+           <div class="flex"> <input type="checkbox" id="other-tenancy" />
+            <label for="other-tenancy">Other:</label>
+            <input type="text" id="other-tenancy-text" />
+          </div>
+          </div>
+          <div class="form-flex">
+          <div class="form-group">
+            <label for="sale-price">Sale Price:</label>
+            <input type="number" id="sale-price" />
+          </div>
+          <div class="form-group">
+            <label for="hst-collected">Was HST Collected:</label>
+            <select id="hst-collected">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="hst">HST:</label>
+            <input type="number" id="hst" placeholder="$ 0.00" />
+          </div>
+      </div>
+  
+          <div class="line"></div>
+          <div class="form-group ">
+            <div>
+              Quit Claim: Section 17 PLA - If applicable, complete A,B & C.
+            </div>
+            <div class="form-flex">
+                <div>
+  
+                    <label for="patent-fee">A. Patent Fee:</label>
+                    <input type="number" id="patent-fee" />
+                  </div>
+                <div >
+                <label for="market-value"
+                >B. Estimated Market Value of Subject property:</label
+                >
+                <input type="number" id="market-value" />
+              </div>
+              </div>
+  
+          </div>
+          <div class="line"></div>
+          <div class="form-group">
+            <div>
+              Sale with Conditions: Section 15 PLA - If applicable, complete A &
+              B.
+            </div>
+            <label for="sale-conditions">A. Conditions of Sale:</label>
+            <input type="text" id="sale-conditions" />
+            <div class="form-flex" style="justify-content: normal;">
+  
+                
+                <label for="conditions-date"
+                >B. Date by which conditions must be satisfied:</label
+                >
+                <input type="date" id="conditions-date" style="width: 200px; height: 40px; margin-left: 10px;" />
+              </div>
+          </div>
+          <div class="line"></div>
+          <div class="form-group">
+            <label for="purpose">Purpose:</label>
+            <input type="text" id="purpose" />
+          </div>
+          <div class="form-group">
+            <label for="legal-description">Legal Description:</label>
+            <input type="text" id="legal-description" />
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="standard" />
+            <label for="standard">Standard</label>
+            <input type="checkbox" id="specific-reservations" />
+            <label for="specific-reservations" id="specific-reservations-label">Specific Reservations
+
+              <div class="multi-select-dropdown">
+                <div class="select-box" id="selectBox">
+                    <span class="selected" id="selected">Select options</span>
+                    <div class="options-container" id="optionsContainer">
+                        <div class="option">
+                            <input type="checkbox" id="option1" value="Mine and minerals">
+                            <label for="option1">Mine and minerals</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="option2" value="Access to shores">
+                            <label for="option2">Access to shores</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="option3" value="Navigability">
+                            <label for="option3">Navigability</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="option4" value="10% for roads">
+                            <label for="option4">10% for roads</label>
+                        </div>
+                        <div class="option">
+                          <input type="checkbox" id="option5" value="Public and colonization of roads">
+                          <label for="option5">Public and colonization of roads</label>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            </label>
+          </div>
+          <div class="line"></div>
+          <div class="form-group">
+            <div>Subject to Easement Must Include the following:</div>
+            <div class="form-flex">
+              <div class="form-basis">
+  
+                  
+                  <label for="easement-number">Easement Reference Number:</label>
+                  <input type="text" id="easement-number" />
+              </div>
+              
+              <div class="form-basis">                <label for="grantee">Grantee:</label>
+                  <input type="text" id="grantee" />
+              </div>
+              </div>
+          </div>
+          <div class="line"></div>
+          <div class="form-group form-flex">
+              <div class="form-basis">
+  
+                  <label for="easement-purpose">Purpose:</label>
+                  <input type="text" id="easement-purpose" />
+              </div>
+              <div class="form-basis">
+  
+                  <label for="instrument-number">Instrument Number:</label>
+                  <input type="text" id="instrument-number" />
+              </div>
+          </div>
+          <div class="line"></div>
+          <div class="form-group">
+            <label for="legal-description-textarea">Legal Description:</label>
+            <textarea id="legal-description-textarea"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="special-conditions">Special Conditions:</label>
+            <textarea id="special-conditions"></textarea>
+          </div>
+          <div class="line"></div>
+          <div class="form-group">
+            <h3>Attachment Check List</h3>
+            <div class="grid col-2">
+            <div class="flex">
+  
+                <input type="checkbox" id="legal-description-schedule" />
+                <label for="legal-description-schedule"
+                >Legal Description/Schedule</label
+                >
+              </div>
+              <div class="flex">
+  
+                  <input type="checkbox" id="current-pin-instruments" />
+                  <label for="current-pin-instruments">Current PIN/Instruments</label>
+              </div>
+              <div class="flex">
+  
+                  <input type="checkbox" id="corporate-profile" />
+                  <label for="corporate-profile">Corporate Profile</label>
+              </div>
+              <div class="flex">
+  
+                  <input type="checkbox" id="oic-briefing-notes" />
+                  <label for="oic-briefing-notes">OIC/Briefing Notes</label>
+              </div>
+              <div class="flex">
+  
+                  <input type="checkbox" id="lease-cancelled" />
+                  <label for="lease-cancelled">Copy of Lease to be Cancelled</label>
+              </div>
+              
+           <div class="flex"> <input type="checkbox" id="legal-approval" />
+            <label for="legal-approval">Legal Services Approval</label></div>
+        
+           <div class="flex"> <input type="checkbox" id="plan" />
+            <label for="plan">Plan</label></div>
+           <div class="flex"> <input type="checkbox" id="other" />
+            <label for="other">Other</label>
+            <input type="text" id="other-text" />
+          </div>
+      </div>
+          </div>
+          <div class="form-group">
+              <h3><i>Crown Land Registry Use Only:</i></h3>
+              <div class="bg grid col-2 gap">
+            <div class=""><label for="document-reference-1">Document Reference No:</label>
+            <input type="text" id="document-reference-1" />
+            </div>
+            <div class=""><label for="date-1">Date:</label>
+            <input type="date" id="date-1" />
+            </div>
+            <div class=""><label for="document-reference-2">Document Reference No:</label>
+            <input type="text" id="document-reference-2" />
+            </div>
+            <div class=""><label for="date-2">Date:</label>
+            <input type="date" id="date-2" />
+            </div>
+            <div class=""><label for="document-reference-3">Document Reference No:</label>
+            <input type="text" id="document-reference-3" />
+            </div>
+            <div class=""><label for="date-3">Date:</label>
+            <input type="date" id="date-3" />
+            </div>
+            <div class=""><label for="land-file-number">Land File Number:</label>
+            <input type="text" id="land-file-number" />
+            </div>
+          </div>
+          </div>
+       </div>
+       <div id="form-sectionB"></div>
+       <div id="form-sectionC"></div>
+
+       
+       <div class="btns">
+
+         <button id="reset" type="reset">Reset</button>
+         <button type="submit" class="submit">Submit</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Continue with additional sections based on the new image -->
+
+  
+
+ 
+  </body>
+</html>
