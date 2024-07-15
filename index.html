@@ -15,7 +15,7 @@
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script> -->
-    <script defer src="script.js"></script>
+    <script defer src="/script.js"></script>
    
     </script>
    
@@ -206,9 +206,17 @@
             <input type="text" id="legal-description" />
           </div>
           <div class="form-group checkbox-group">
-            <input type="checkbox" id="standard" />
+            <div class="checkmark-container">
+              <input type="checkbox" id="standard" />
+
+              <span class="checkmark"></span>
+            </div>
             <label for="standard">Standard</label>
-            <input type="checkbox" id="specific-reservations" />
+            <div class="checkmark-container">
+
+              <input type="checkbox" id="specific-reservations" />
+              <span class="checkmark"></span>
+            </div>
             <label for="specific-reservations" id="specific-reservations-label">Specific Reservations
 
               <div class="multi-select-dropdown">
@@ -216,6 +224,7 @@
                     <span class="selected" id="selected">Select options</span>
                     <div class="options-container" id="optionsContainer">
                         <div class="option">
+                          
                             <input type="checkbox" id="option1" value="Mine and minerals">
                             <label for="option1">Mine and minerals</label>
                         </div>
@@ -283,39 +292,73 @@
             <h3>Attachment Check List</h3>
             <div class="grid col-2">
             <div class="flex">
-  
+              <div class="checkmark-container">
+
                 <input type="checkbox" id="legal-description-schedule" />
+                <span class="checkmark"></span>
+              </div>
+  
                 <label for="legal-description-schedule"
                 >Legal Description/Schedule</label
                 >
               </div>
               <div class="flex">
-  
+                <div class="checkmark-container">
+
                   <input type="checkbox" id="current-pin-instruments" />
+                  <span class="checkmark"></span>
+                </div>
                   <label for="current-pin-instruments">Current PIN/Instruments</label>
               </div>
               <div class="flex">
-  
+                <div class="checkmark-container">
+
                   <input type="checkbox" id="corporate-profile" />
+                  <span class="checkmark"></span>
+                </div>
+  
                   <label for="corporate-profile">Corporate Profile</label>
               </div>
               <div class="flex">
-  
+                <div class="checkmark-container">
+
                   <input type="checkbox" id="oic-briefing-notes" />
+                  <span class="checkmark"></span>
+                </div>
+  
                   <label for="oic-briefing-notes">OIC/Briefing Notes</label>
               </div>
               <div class="flex">
-  
+                <div class="checkmark-container">
+
                   <input type="checkbox" id="lease-cancelled" />
+                  <span class="checkmark"></span>
+                </div>
                   <label for="lease-cancelled">Copy of Lease to be Cancelled</label>
               </div>
               
-           <div class="flex"> <input type="checkbox" id="legal-approval" />
+           <div class="flex">
+            <div class="checkmark-container">
+
+              <input type="checkbox" id="legal-approval" />
+              <span class="checkmark"></span>
+            </div>
             <label for="legal-approval">Legal Services Approval</label></div>
         
-           <div class="flex"> <input type="checkbox" id="plan" />
+           <div class="flex"> 
+            <div class="checkmark-container">
+
+              <input type="checkbox" id="plan" />
+              <span class="checkmark"></span>
+            </div>
+
             <label for="plan">Plan</label></div>
-           <div class="flex"> <input type="checkbox" id="other" />
+           <div class="flex">
+            <div class="checkmark-container">
+
+              <input type="checkbox" id="other" />
+              <span class="checkmark"></span>
+            </div>
             <label for="other">Other</label>
             <input type="text" id="other-text" />
           </div>

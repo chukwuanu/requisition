@@ -314,6 +314,65 @@ textarea {
 .option label {
   flex: 1;
 }
+.checkmark-container input[type="checkbox"] {
+  /* display: none; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 !important;
+  z-index: 2;
+  opacity: 0;
+}
+.checkmark-container {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+  width: 25px;
+  height: 25px;
+  position: relative;
+}
+.checkmark {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(241, 244, 255);
+}
+input,
+textarea {
+  background-color: rgb(241, 244, 255);
+}
+.flex label {
+  margin-left: 5px;
+}
+/* .checkmark-container input:checked + .checkmark {
+} */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkmark-container input:checked + .checkmark:after {
+  display: block;
+}
+
 option input:checked + label {
   font-weight: bold;
 }

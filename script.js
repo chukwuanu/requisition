@@ -31,17 +31,6 @@ specificReservation.addEventListener("click", () => {
   handleSpecificReservationCheckbox();
 });
 // Toggle dropdown
-selectBox.addEventListener("click", (e) => {
-  console.log("clicked", optionsContainer.style.display);
-  if (
-    optionsContainer.style.display === "block" &&
-    e.target.tagName !== "INPUT" &&
-    !e.target.classList.contains("option")
-  )
-    optionsContainer.style.display = "none";
-  else optionsContainer.style.display = "block";
-  handleSpecificReservationCheckbox();
-});
 
 // Update selected options
 optionsList.forEach((option) => {
@@ -77,11 +66,38 @@ const handleSpecificReservationCheckbox = function () {
   } else specificReservation.checked = false;
 };
 // Close dropdown when clicking outside
-document.addEventListener("click", (e) => {
-  console.log(e, e.target);
-  if (!selectBox.contains(e.target)) {
-    // optionsContainer.style.display = "none";
+document.addEventListener("click", (event) => {
+  const multiSelectDropdown = document.querySelector(".multi-select-dropdown");
+  const optionsContainer = document.querySelector("#optionsContainer");
+
+  console.log("multiselect dropdown", multiSelectDropdown);
+  console.log(
+    "something here",
+    !multiSelectDropdown.contains(event.target),
+    optionsContainer.style.display === "block"
+  );
+
+  if (
+    !multiSelectDropdown.contains(event.target) &&
+    optionsContainer.style.display === "block" &&
+    event.target.tagName !== "INPUT" &&
+    !event.target.classList.contains("option")
+  ) {
+    optionsContainer.style.display = "none";
   }
+});
+
+selectBox.addEventListener("click", (e) => {
+  e.stopPropagation();
+  console.log("clicked", optionsContainer.style.display);
+  if (
+    optionsContainer.style.display === "block" &&
+    e.target.tagName !== "INPUT" &&
+    !e.target.classList.contains("option")
+  )
+    optionsContainer.style.display = "none";
+  else optionsContainer.style.display = "block";
+  handleSpecificReservationCheckbox();
 });
 
 const handleTooltip = function () {
